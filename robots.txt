@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://z2326961-commits.github.io/Your--toolbox-/sitemap.xml
