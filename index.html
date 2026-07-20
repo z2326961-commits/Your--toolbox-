@@ -1,12 +1,67 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartToolbox - Free Online AI Writer & Utility Tools</title>
+    
+    <!-- PRIMARY SEO META TAGS -->
+    <title>SmartToolbox - Free Online AI Writer & Instant QR Code Generator</title>
+    <meta name="description" content="Use SmartToolbox for free online AI content writing, YouTube script generation, and instant QR code creation. No login or signup required! Fast and 100% secure.">
+    <meta name="keywords" content="free ai writer, ai script writer, qr code generator, online utility tools, smart toolbox, free web tools, free online qrcode, youtube script writing helper">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SmartToolbox">
+    
+    <!-- CANONICAL LINK (Tells Google the main URL of your site) -->
+    <link rel="canonical" href="https://z2326961-commits.github.io/Your--toolbox-/" />
+
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION PLACEHOLDER -->
+    <!-- Jab aapko Google Search Console se verification code mile, to "YOUR_VERIFICATION_CODE" ki jagah use paste kar dena -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
+    
+    <!-- OPEN GRAPH META TAGS (For Facebook, WhatsApp, LinkedIn sharing previews) -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SmartToolbox - Free Online AI Writer & QR Generator" />
+    <meta property="og:description" content="Generate professional AI articles and create custom QR codes in seconds. Completely free, secure, and no login required!" />
+    <meta property="og:url" content="https://z2326961-commits.github.io/Your--toolbox-/" />
+    <meta property="og:site_name" content="SmartToolbox" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80" />
+
+    <!-- TWITTER CARD META TAGS -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SmartToolbox - Free AI & QR Toolset" />
+    <meta name="twitter:description" content="Instant AI content generation and custom QR code creator. Safe, fast, and completely free." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80" />
+
+    <!-- JSON-LD SCHEMA MARKUP (Structured Data for Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SmartToolbox",
+      "url": "https://z2326961-commits.github.io/Your--toolbox-/",
+      "description": "Free web utility toolbox featuring a generative AI text writer and an instant QR code creator with no signup required.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires HTML5 compatible browser.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Free AI Smart Writer",
+        "Instant custom QR Code Generator"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
     <style>
         .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
         .tab-content { display: none; }
@@ -28,65 +83,92 @@
                 </div>
             </div>
             <nav class="flex space-x-1 bg-gray-100 p-1 rounded-xl">
-                <button onclick="switchTab('ai-writer')" id="tab-ai-writer" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white text-indigo-600 shadow-sm">AI Assistant</button>
-                <button onclick="switchTab('qr-gen')" id="tab-qr-gen" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-600">QR Generator</button>
+                <button onclick="switchTab('ai-writer')" id="tab-ai-writer" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white text-indigo-600 shadow-sm" aria-label="AI Writer Tab">AI Assistant</button>
+                <button onclick="switchTab('qr-gen')" id="tab-qr-gen" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium text-gray-600" aria-label="QR Generator Tab">QR Generator</button>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content Area -->
     <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-8">
         
         <!-- Tab 1: AI Assistant -->
-        <section id="sec-ai-writer" class="tab-content active">
+        <section id="sec-ai-writer" class="tab-content active" aria-labelledby="ai-writer-title">
             <div class="bg-white rounded-2xl shadow-xl border p-6 space-y-6">
                 <div class="border-b pb-2">
-                    <h2 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-robot text-indigo-600 mr-2"></i>AI Smart Writer</h2>
-                    <p class="text-xs text-gray-500">Generate high-quality articles, essays, or scripts using AI</p>
+                    <h2 id="ai-writer-title" class="text-lg font-bold text-gray-800"><i class="fa-solid fa-robot text-indigo-600 mr-2"></i>AI Smart Writer &amp; Script Generator</h2>
+                    <p class="text-xs text-gray-500">Generate high-quality articles, essays, YouTube scripts, or creative text instantly using advanced AI.</p>
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">What do you want to write?</label>
-                    <textarea id="ai-prompt" rows="4" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., Write a YouTube script about amazing facts..."></textarea>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label for="ai-prompt" class="block text-sm font-semibold text-gray-700 mb-2">What do you want to write? (Describe your topic)</label>
+                        <textarea id="ai-prompt" rows="4" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-base" placeholder="e.g., Write a 500-word highly engaging blog post about healthy eating habits..."></textarea>
+                    </div>
+                    <div>
+                        <label for="api-key-input" class="block text-sm font-semibold text-gray-700 mb-2">Gemini API Key (<a href="https://aistudio.google.com/" target="_blank" rel="noopener" class="text-indigo-600 underline">Get Free Key here</a>)</label>
+                        <input type="password" id="api-key-input" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Paste your Gemini API Key here...">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Gemini API Key</label>
-                    <input type="password" id="api-key-input" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Paste your Gemini API Key here...">
-                </div>
-                <button onclick="generateAIContent()" class="w-full gradient-bg text-white font-semibold py-4 rounded-xl shadow-lg hover:opacity-90 transition">Generate Content</button>
+
+                <button onclick="generateAIContent()" class="w-full gradient-bg text-white font-semibold py-4 rounded-xl shadow-lg hover:opacity-90 transition transform active:scale-95">Generate Content</button>
+                
+                <!-- Output Container -->
                 <div id="ai-output-container" class="hidden space-y-2">
-                    <label class="block text-sm font-semibold text-gray-700">Output:</label>
-                    <div id="ai-output-text" class="p-4 bg-gray-50 border rounded-xl whitespace-pre-wrap text-gray-700"></div>
+                    <div class="flex justify-between items-center">
+                        <label class="block text-sm font-semibold text-gray-700">Generated Output:</label>
+                        <button onclick="copyOutputText()" class="text-xs bg-indigo-50 text-indigo-600 px-3 py-1.5 rounded-lg hover:bg-indigo-100 font-medium"><i class="fa-regular fa-copy mr-1"></i>Copy Result</button>
+                    </div>
+                    <div id="ai-output-text" class="p-4 bg-gray-50 border rounded-xl whitespace-pre-wrap text-gray-700 leading-relaxed max-h-96 overflow-y-auto"></div>
                 </div>
             </div>
         </section>
 
         <!-- Tab 2: QR Generator -->
-        <section id="sec-qr-gen" class="tab-content">
+        <section id="sec-qr-gen" class="tab-content" aria-labelledby="qr-gen-title">
             <div class="bg-white rounded-2xl shadow-xl border p-6 space-y-6">
                 <div class="border-b pb-2">
-                    <h2 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-qrcode text-indigo-600 mr-2"></i>Instant QR Code Generator</h2>
-                    <p class="text-xs text-gray-500">Convert links, text, or phone numbers into a QR Code</p>
+                    <h2 id="qr-gen-title" class="text-lg font-bold text-gray-800"><i class="fa-solid fa-qrcode text-indigo-600 mr-2"></i>Instant Custom QR Code Generator</h2>
+                    <p class="text-xs text-gray-500">Instantly convert links, contact details, WiFi credentials, or text paragraphs into a clean, high-resolution QR Code.</p>
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Enter Text or URL Link</label>
-                    <input type="text" id="qr-text" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., https://google.com">
+                    <label for="qr-text" class="block text-sm font-semibold text-gray-700 mb-2">Enter Destination Link (URL) or Text</label>
+                    <input type="text" id="qr-text" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="e.g., https://yourwebsite.com">
                 </div>
-                <button onclick="generateQRCode()" class="w-full gradient-bg text-white font-semibold py-4 rounded-xl shadow-lg hover:opacity-90 transition">Generate QR Code</button>
+                <button onclick="generateQRCode()" class="w-full gradient-bg text-white font-semibold py-4 rounded-xl shadow-lg hover:opacity-90 transition transform active:scale-95">Generate QR Code</button>
+                
                 <div id="qr-output-container" class="hidden flex flex-col items-center justify-center p-6 bg-gray-50 border rounded-xl space-y-4">
-                    <div id="qrcode" class="p-2 bg-white border rounded-lg shadow-sm"></div>
-                    <p class="text-xs text-gray-500">Long press the image to download or save your QR Code</p>
+                    <div id="qrcode" class="p-4 bg-white border rounded-xl shadow-md"></div>
+                    <p class="text-xs text-gray-500 text-center"><i class="fa-solid fa-info-circle mr-1"></i>Long press the QR code above to download or share it directly from your mobile.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- SEO Informational Section (Helps search engines understand page context) -->
+        <section class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Tool Information">
+            <div class="bg-white p-6 rounded-2xl border">
+                <h3 class="text-base font-bold text-gray-900 mb-2"><i class="fa-solid fa-pen-nib text-indigo-600 mr-2"></i>Why use our Free AI Writer?</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Our online AI writing assistant uses advanced generative technology to write blogs, marketing copies, school essays, and video outlines. No registration or software downloads needed.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border">
+                <h3 class="text-base font-bold text-gray-900 mb-2"><i class="fa-solid fa-wand-magic-sparkles text-indigo-600 mr-2"></i>High-Quality Instant QR Generator</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Create completely custom static QR codes for physical marketing, websites, business cards, or menus. Fully compatible with all iOS and Android smartphone camera scanners.</p>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t py-4 text-center text-sm text-gray-500">
-        &copy; 2026 SmartToolbox. Created with ❤️
+    <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>&copy; 2026 SmartToolbox. Free Professional Utility Hub.</div>
+            <div class="flex space-x-4">
+                <span class="text-xs text-gray-400">All tools are 100% private and client-side safe.</span>
+            </div>
+        </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- App Logic -->
     <script>
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -102,16 +184,16 @@
         }
 
         async function generateAIContent() {
-            const prompt = document.getElementById('ai-prompt').value;
-            const apiKey = document.getElementById('api-key-input').value;
+            const prompt = document.getElementById('ai-prompt').value.trim();
+            const apiKey = document.getElementById('api-key-input').value.trim();
             if(!prompt || !apiKey) {
-                alert("Please fill in both the prompt and API key fields.");
+                alert("Please fill in both the prompt and your personal API key.");
                 return;
             }
             const outContainer = document.getElementById('ai-output-container');
             const outText = document.getElementById('ai-output-text');
             outContainer.classList.remove('hidden');
-            outText.innerText = "AI is thinking... Please wait...";
+            outText.innerText = "Processing prompt and generating smart content. Please wait a few seconds...";
             
             try {
                 const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
@@ -123,18 +205,33 @@
                 if(data.candidates && data.candidates[0].content.parts[0].text) {
                     outText.innerText = data.candidates[0].content.parts[0].text;
                 } else {
-                    outText.innerText = "Error: Invalid API key or request. Please check your credentials.";
+                    outText.innerText = "Verification failed or quota reached. Please confirm your Gemini API key is active and correct.";
                 }
             } catch (e) { 
-                outText.innerText = "Failed to connect to AI server. Please try again."; 
+                outText.innerText = "Connection timeout or invalid API request. Verify network status and try again."; 
             }
+        }
+
+        function copyOutputText() {
+            const textToCopy = document.getElementById('ai-output-text').innerText;
+            if(!textToCopy || textToCopy.startsWith("Processing") || textToCopy.startsWith("Connection")) return;
+            
+            // Clipboard fallback copy
+            const el = document.createElement('textarea');
+            el.value = textToCopy;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            
+            alert("Content copied to clipboard successfully!");
         }
 
         let qrcodeInstance = null;
         function generateQRCode() {
-            const text = document.getElementById('qr-text').value;
+            const text = document.getElementById('qr-text').value.trim();
             if(!text) {
-                alert("Please enter some text or a link.");
+                alert("Please enter a valid website URL or text first.");
                 return;
             }
             const container = document.getElementById('qr-output-container');
@@ -144,9 +241,9 @@
             
             qrcodeInstance = new QRCode(qrDiv, {
                 text: text,
-                width: 180,
-                height: 180,
-                colorDark : "#000000",
+                width: 200,
+                height: 200,
+                colorDark : "#1f2937",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
             });
@@ -155,3 +252,5 @@
 </body>
 </html>
 
+```
+        
